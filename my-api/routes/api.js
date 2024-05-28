@@ -18,7 +18,7 @@ router.get('/teste', (req, res) => {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  // Exemplo de desenho no canvas
+  
   ctx.fillStyle = 'skyblue';
   ctx.fillRect(0, 0, width, height);
 
@@ -26,7 +26,6 @@ router.get('/teste', (req, res) => {
   ctx.font = '40px Arial';
   ctx.fillText('Hello, Canvas!', 200, 300);
 
-  // Enviar a imagem como resposta
   res.setHeader('Content-Type', 'image/png');
   canvas.pngStream().pipe(res);
 });
